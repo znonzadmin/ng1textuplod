@@ -1,0 +1,36 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+ 	<meta charset="utf-8">
+ 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+ 	<title></title>
+ 	<link rel="stylesheet" href="">
+ 	<script src="//cdn.bootcss.com/angular.js/1.5.0/angular.js"></script>
+ 	<script type="text/javascript" src="tools/ng-upload/angular-file-upload.min.js"></script>
+ 	<script type="text/javascript" src="tools/ng-upload/upload-dri.js"></script>
+ 	<script type="text/javascript" src="mainjs/main-upload.js"></script>
+ </head>
+ <body >
+ 	<form class="form-horizontal" name="form">
+    <div class="form-line">
+        <label>请选择证书文件：</label><span class="small-tip">证书文件只支持.pem格式，文件大小1M以内</span>
+        <div class="choose-file-area">
+            <input class="file-name" type="text" readonly="readonly" ng-model="fileItem.name"/>
+            <a href="javascript:;" class="choose-book">
+                <input type="file" name="certificate" nv-file-select uploader="uploader" ng-click="clearItems()"/>浏览
+            </a>
+        </div>
+    </div>
+    <div class="form-line">
+        <label>请选择私钥文件：</label><span class="small-tip">私钥文件只支持.key格式，文件大小1M以内</span>
+        <div class="choose-file-area">
+            <input class="file-name" type="text" readonly="readonly" ng-model="fileItem1.name"/>
+            <a href="javascript:;" class="choose-key">
+                <input type="file" name="key" nv-file-select uploader="uploader1" ng-click="clearItems1()"/>浏览
+            </a>
+        </div>
+    </div>
+    <button type="submit" ng-click="UploadFile()">提交</button>
+</form>
+ </body>
+ </html>
